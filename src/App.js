@@ -7,7 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Categories from './redux/categories/categories';
-import Books from './redux/books/books';
+import AddBooks from './components/addBooks';
 import Nav from './components/nav';
 import ListBooks from './components/book';
 
@@ -24,7 +24,7 @@ function App() {
             <ListBooks />
           </Route>
           <Route path="/">
-            <Books />
+            <AddBooks />
           </Route>
         </Switch>
 

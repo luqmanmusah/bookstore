@@ -1,5 +1,5 @@
 import React from 'react';
-import Books from '../redux/books/books';
+import AddBooks from './addBooks';
 
 const ListBooks = () => (
   <div>
@@ -9,7 +9,7 @@ const ListBooks = () => (
     <h3>
       Books
     </h3>
-    <Books />
+    <AddBooks />
   </div>
 );
 
