@@ -1,30 +1,23 @@
-import React from "react";
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
 
-class Books extends React.Component {
-    state = {
-        bookList: [
-            {
-                id: 1,
-                title: 'The Book Club',
-            },
-            {
-                id: 2,
-                title: 'The good book',
-            },
-            {
-                id: 3,
-                title: 'Rules of Power',
-            },
-        ]
-    }
-    render() {
-        return(
+const Books = () => {
+  const updateTitle = () => {
+  };
+  const updateAuthor = () => {
+  };
+
+  const submitBook = () => {
+
+  };
+
+  return (
     <div>
       <h3>Add new book</h3>
-      <form onSubmit={this.addBook}>
+      <form>
         <label>Title:</label>
         <br />
-        <input type="text" className="title" name="title"/>
+        <input type="text" className="title" name="title" onChange={updateTitle} />
         <br />
         <label>Category:</label>
         <br />
@@ -32,15 +25,8 @@ class Books extends React.Component {
         <br />
         <input type="submit" value="Submit" onClick={submitBook} />
       </form>
-      <ul>
-          {this.state.bookList.map((book) => (
-              <li>
-                  <p>{book.title}</p>
-                  <button>delete</button>
-              </li>
-          ))}
-      </ul>
     </div>
-        )
-    }
-}
+  );
+};
+
+export default Books;
