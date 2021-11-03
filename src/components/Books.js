@@ -1,32 +1,18 @@
-// /* eslint-disable jsx-a11y/label-has-associated-control */
-// import React from 'react';
+import React from 'react';
+import book from './book';
 
-// const Books = () => {
-//   const updateTitle = () => {
-//   };
-//   const updateAuthor = () => {
-//   };
+export default books() {
+  const book = {
+    title: 'Democracy The God That Failed',
+    author: 'Hans-Hermann Hoppe',
+  };
 
-//   const submitBook = () => {
-
-//   };
-
-//   return (
-//     <div>
-//       <h3>Add new book</h3>
-//       <form>
-//         <label>Title:</label>
-//         <br />
-//         <input type="text" className="title" name="title" onChange={updateTitle} />
-//         <br />
-//         <label>Author</label>
-//         <br />
-//         <input type="text" className="author" name="author" onChange={updateAuthor} />
-//         <br />
-//         <input type="submit" value="Submit" onClick={submitBook} />
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default Books;
+  const books = [book];
+  return (
+    <ul>
+      {
+        Array.isArray(books) ? books.map((book) => <book key={book.id} book={book} />) : 'No Books yet'
+      }
+    </ul>
+  );
+};
