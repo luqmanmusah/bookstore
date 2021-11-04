@@ -20,11 +20,9 @@ const Nav = () => {
       <ul>
         {links.map((link) => (
           <li key={link.id}>
-            <NavLink
-              to={link.path}
-              exact
-            >
+            <NavLink to={link.path} exact>
               {link.text}
+              {' '}
             </NavLink>
           </li>
         ))}

@@ -1,18 +1,16 @@
-// import React from 'react';
-// import book from './book';
+import React from 'react';
+import Book from './book';
 
-// export default books() {
-//   const book = {
-//     title: 'Democracy The God That Failed',
-//     author: 'Hans-Hermann Hoppe',
-//   };
-
-//   const books = [book];
-//   return (
-//     <ul>
-//       {
-
-//       }
-//     </ul>
-//   );
-// };
+export default function Books(prop) {
+  const { data } = prop;
+  return (
+    <div>
+      <h1>My Books</h1>
+      <ul>
+        {
+        data.map((book) => <Book key={book.id} book={book} />)
+        }
+      </ul>
+    </div>
+  );
+}
