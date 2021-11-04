@@ -4,36 +4,22 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-import Categories from './components/categories';
 import Nav from './components/nav';
 import Books from './components/Books';
 import AddBooks from './components/addBooks';
+import Categories from './components/categories';
 
 function App() {
-  const book1 = [{
-    title: 'The First Book',
-    uuthor: 'John Hope',
-  },
-  {
-    title: 'The Second Book',
-    author: 'Bishop Eve',
-  },
-  {
-    title: 'The Third Book',
-    author: 'Luke Cage',
-  },
-  ];
-
   return (
     <div className="App">
       <Router>
         <Nav />
         <Route exact path="/">
-          <Books data={book1} />
+          <Books />
           <AddBooks />
         </Route>
         <Switch>
-          <Route exact path="categories">
+          <Route path="/categories">
             <Categories />
           </Route>
         </Switch>
