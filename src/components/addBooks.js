@@ -49,11 +49,11 @@ const submitBookToStore = book => {
     <form>
       <label>Title:</label>
       <br />
-      <input type="text" className="title" name="title" placeholder="Title" />
+      <input type="text" className="title" name="title" onChange={onChange} placeholder="Title" />
       <br />
       <label>Author</label>
       <br />
-      <input type="text" className="author" name="author" placeholder="Author" />
+      <input type="text" className="author" name="author" onChange={onChange} placeholder="Author" />
       <br />
       <select>
         <option value="Action">Action</option>
@@ -61,7 +61,7 @@ const submitBookToStore = book => {
         <option value="Horror">Horror</option>
       </select>
       <br />
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" onClick={handleAddBook} />
     </form>
   </div>
 );
