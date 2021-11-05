@@ -4,6 +4,7 @@ import Book from './book';
 
 export default function Books() {
   const books = useSelector((state) => state.books, shallowEqual);
+  console.log(books);
   return (
     <div>
       <h1>My Books</h1>
