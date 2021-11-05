@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-param-reassign */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
