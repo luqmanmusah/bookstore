@@ -33,4 +33,3 @@ Book.propTypes = {
 };
 
 export default Book;
- 
