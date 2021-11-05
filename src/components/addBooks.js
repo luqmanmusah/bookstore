@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
+import { addBookAPI } from '../API/Api';
 import { addBook } from '../redux/books/books';
 
 const emptyFields = () => {
@@ -26,14 +27,16 @@ function AddBooks() {
     });
   };
 
-  const submitBookToStore = (book) => {
-    // book.preventDefault();
+  const submitBookToStore = async (e) => {
+    e.preventDefault();
     const newBook = {
       ...book,
       id: uuidv4(), // make sure it's unique
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
+    await addBookAPI(newBook);
+
     dispatch(addBook(newBook));
   };
 
