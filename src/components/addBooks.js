@@ -8,12 +8,12 @@ import { addBookAPI } from '../API/Api';
 import { addBook } from '../redux/books/books';
 import Categories from './categories';
 
-const emptyFields = () => {
-  const fields = document.querySelectorAll('.add-form input');
-  fields.forEach((field) => {
-    field.value = '';
-  });
-};
+// const emptyFields = () => {
+//   const fields = document.querySelectorAll('.add-form input');
+//   fields.forEach((field) => {
+//     field.value = '';
+//   });
+// };
 
 function AddBooks() {
   const dispatch = useDispatch();
@@ -36,19 +36,21 @@ function AddBooks() {
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
-    addBookAPI(newBook);
-
-    dispatch(addBook(newBook));
+    addBookAPI(newBook)
+      // eslint-disable-next-line operator-linebreak
+      .then((response) => (response.data === 'Created' ?
+        dispatch(addBook(newBook)) : 'Not Added'))
+      .catch((error) => error);
   };
 
-  const handleAddBook = () => {
-    if (title && author) {
-      submitBookToStore();
-      emptyFields();
-    } else {
-      alert('Fill in the empty fields');
-    }
-  };
+  // const handleAddBook = () => {
+  //   if (title && author) {
+  //     submitBookToStore();
+  //     emptyFields();
+  //   } else {
+  //     alert('Fill in the empty fields');
+  //   }
+  // };
   return (
     <div>
       <h3>Add new book</h3>
@@ -64,7 +66,7 @@ function AddBooks() {
           <option value="Horror">Horror</option>
         </select>
         <br />
-        <input type="button" value="Submit" onClick={handleAddBook} />
+        <input type="button" value="Submit" onClick={submitBookToStore} />
       </form>
     </div>
   );

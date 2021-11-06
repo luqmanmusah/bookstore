@@ -11,10 +11,16 @@ import { removeBookAPI } from '../API/Api';
 const Book = (prop) => {
   const dispatch = useDispatch();
   const { item_id, title, category } = prop.bookArray;
+
   const removeBookFromStore = () => {
-    removeBookAPI(item_id);
-    dispatch(removeBook({ item_id }));
+    removeBookAPI(item_id)
+      .then((response) => {
+        if (response.data === 'The book was deleted successfully!') {
+          dispatch(removeBook({ item_id }));
+        }
+      });
   };
+
   return (
 
     <li key={item_id}>

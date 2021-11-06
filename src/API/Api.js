@@ -6,11 +6,12 @@ const uniId = 'zrsfFNvt20pe6hjnRwcn';
 const appURL = `${baseURL}${uniId}/books/`;
 
 const addBookAPI = async (book) => {
-  axios.post(appURL, book)
-    .then((response) => response)
-    .catch((error) => {
-      throw new Error(error);
-    });
+  try {
+    const response = axios.post(appURL, book);
+    return response;
+  } catch (error) {
+    return error;
+  }
 };
 
 const fetchBookAPI = async () => {
@@ -34,9 +35,10 @@ const fetchBookAPI = async () => {
 };
 
 const removeBookAPI = async (id) => {
-  axios.delete(`${appURL}${id}`, {
+  const req = await axios.delete(`${appURL}${id}`, {
     item_id: id,
   });
+  return req;
 };
 
 export { addBookAPI, removeBookAPI, fetchBookAPI };
