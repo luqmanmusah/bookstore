@@ -27,9 +27,11 @@ const Book = (prop) => {
 
   return (
 
-    <li key={item_id} className="Book">
-      <p className="book_title">{title}</p>
-      <p className="book_category">{category}</p>
+    <div key={item_id} className="Book">
+      <div>
+        <p className="book_title">{title}</p>
+        <p className="book_category">{category}</p>
+      </div>
       <div id={item_id} className="book-options">
         <a href="/#">Comments</a>
         {' | '}
@@ -43,7 +45,7 @@ const Book = (prop) => {
       <div>
         <Progress />
       </div>
-    </li>
+    </div>
   );
 };
 
