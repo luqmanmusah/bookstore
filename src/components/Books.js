@@ -10,13 +10,13 @@ const Books = (props) => {
   const books = props.data;
   return (
     <div>
-      <h1>My Books</h1>
       <ul>
         {
         // eslint-disable-next-line react/prop-types
         books.map((book) => <Book key={book.item_id} bookArray={book} />)
         }
       </ul>
+      <hr />
       <AddBooks />
     </div>
   );

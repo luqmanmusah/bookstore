@@ -16,17 +16,22 @@ const Nav = () => {
     },
   ];
   return (
-    <nav>
-      <ul>
-        {links.map((link) => (
-          <li key={link.id}>
-            <NavLink to={link.path} exact>
-              {link.text}
-              {' '}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+    <nav className="navbar">
+      <div className="nav1">
+        <header>
+          <h1 className="Title">Bookstore CMS</h1>
+        </header>
+        <ul className="Links">
+          {links.map((link) => (
+            <li key={link.id} className={link.name}>
+              <NavLink to={link.path} exact>
+                {link.text}
+                {' '}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };

@@ -9,6 +9,17 @@ body {
   margin: 0;
 }
 
+.Title {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-weight: bold;
+  font-size: 1.875rem;
+}
+
+.Title,
+.oval {
+  color: #0290ff;
+}
+
 .submit,
 .update {
   background-color: #0290ff;
@@ -34,7 +45,7 @@ body {
   text-decoration: underline;
 }
 
-.Navbar {
+.navbar {
   background-color: #fff;
   justify-content: space-between;
 }
@@ -45,14 +56,14 @@ body {
   padding: 0;
 }
 
-.Navbar,
+.navbar,
 .Links,
-.Nav1 {
+.nav1 {
   display: flex;
 }
 
-.Navbar,
-.Nav1 {
+.navbar,
+.nav1 {
   align-items: center;
 }
 
@@ -60,7 +71,7 @@ body {
   padding: 0 20px;
 }
 
-.FormInput {
+.form-input {
   display: flex;
   justify-content: space-between;
 }
@@ -76,7 +87,7 @@ body {
   justify-content: space-between;
 }
 
-.Navbar,
+.navbar,
 .books,
 .form {
   padding: 1rem 6.188rem 1rem 6.25rem;
@@ -92,6 +103,37 @@ body {
   line-height: normal;
   letter-spacing: normal;
   color: #121212;
+}
+
+hr {
+  margin-left: 6.188rem;
+  margin-right: 6.25rem;
+}
+
+.form h3 {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #888;
+}
+
+.Book div {
+  width: 80%;
+  align-self: center;
+}
+
+.title {
+  width: 55%;
+}
+
+.categories,
+.title {
+  padding-left: 10px;
+}
+
+.categories,
+.submit {
+  width: 20%;
 }
 
 .book_title {
@@ -167,4 +209,14 @@ body {
   line-height: normal;
   letter-spacing: normal;
   color: var(--white);
+}
+
+.book-options a {
+  color: #4386bf;
+}
+
+.oval {
+  width: 4.25rem;
+  height: 4.25rem;
+  padding-right: 30px;
 }

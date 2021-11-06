@@ -55,8 +55,6 @@ function AddBooks() {
     <div className="form">
       <h3>Add new book</h3>
       <form className="form-input">
-        <label>Title:</label>
-        <br />
         <input type="text" className="title" name="title" onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
         <br />
         <select value={Categories} name="categories" className="categories" onChange={(e) => setAuthor(e.target.value)}>
