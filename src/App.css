@@ -40,10 +40,6 @@ body {
   color: #121212;
 }
 
-input[type=text] {
-  color: rgb(0, 0, 0);
-}
-
 .active-link {
   color: #000;
   text-decoration: underline;
@@ -202,6 +198,12 @@ hr {
 .percentageContainer {
   display: flex;
   align-items: center;
+}
+
+.border-line {
+  border-left: 2px solid rgb(241, 241, 241);
+  height: 120px;
+  padding: inherit;
 }
 
 .book-options {

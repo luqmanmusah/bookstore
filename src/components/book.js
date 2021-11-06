@@ -43,7 +43,7 @@ const Book = (prop) => {
       <div>
         <Percentage />
       </div>
-      <span className="border-r border-gray-200 mx-2">{ }</span>
+      <span className="border-line" />
       <div>
         <Progress />
       </div>
