@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBookAPI } from '../API/Api';
 import { addBook } from '../redux/books/books';
+import Categories from './categories';
 
 const emptyFields = () => {
   const fields = document.querySelectorAll('.add-form input');
@@ -16,33 +17,33 @@ const emptyFields = () => {
 
 function AddBooks() {
   const dispatch = useDispatch();
-  const [book, setBook] = useState({
-    title: '',
-    author: '',
-  });
+  const [title, setTitle] = useState();
+  const [author, setAuthor] = useState();
 
-  const onChange = (e) => {
-    setBook({
-      ...book, [e.target.name]: e.target.value,
-    });
-  };
+  // const onChange = (e) => {
+  //   setBook({
+  //     ...book, [e.target.name]: e.target.value,
+  //   });
+  // };
 
-  const submitBookToStore = async (e) => {
-    e.preventDefault();
+  const submitBookToStore = async () => {
+    // e.preventDefault();
     const newBook = {
-      ...book,
-      id: uuidv4(), // make sure it's unique
+      item_id: uuidv4(),
+      title,
+      category: author,
+      // make sure it's unique
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
-    await addBookAPI(newBook);
+    addBookAPI(newBook);
 
     dispatch(addBook(newBook));
   };
 
   const handleAddBook = () => {
-    if (book.title && book.author) {
-      submitBookToStore(book);
+    if (title && author) {
+      submitBookToStore();
       emptyFields();
     } else {
       alert('Fill in the empty fields');
@@ -54,13 +55,10 @@ function AddBooks() {
       <form>
         <label>Title:</label>
         <br />
-        <input type="text" className="title" name="title" onChange={onChange} placeholder="Title" />
+        <input type="text" className="title" name="title" onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
         <br />
-        <label>Author</label>
-        <br />
-        <input type="text" className="author" name="author" onChange={onChange} placeholder="Author" />
-        <br />
-        <select>
+        <select value={Categories} name="categories" className="categories" onChange={(e) => setAuthor(e.target.value)}>
+          <option defaultValue="">Category</option>
           <option value="Action">Action</option>
           <option value="Fiction">Fiction</option>
           <option value="Horror">Horror</option>

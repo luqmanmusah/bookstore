@@ -19,12 +19,12 @@ const fetchBookAPI = async () => {
   const response = await axios.get(appURL);
   Object.entries(response.data).forEach((item) => {
     const bookID = item[0];
-    const [{ title, author }] = item[1];
+    const [{ title, category }] = item[1];
 
     const objAPI = {
       item_id: bookID,
       title,
-      author,
+      category,
     };
 
     APIData.push(objAPI);

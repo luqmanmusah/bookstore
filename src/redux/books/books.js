@@ -11,7 +11,7 @@ const reducer = (state = initialState, action) => {
     case GET_BOOK:
       return [...state.concat(action.payload)];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload.id);
+      return state.filter((book) => book.item_id !== action.payload.item_id);
     default:
       return state;
   }
