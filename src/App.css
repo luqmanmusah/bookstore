@@ -16,7 +16,8 @@ body {
 }
 
 .Title,
-.oval {
+.oval,
+.user {
   color: #0290ff;
 }
 

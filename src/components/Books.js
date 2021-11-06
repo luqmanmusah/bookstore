@@ -1,7 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import Book from './book';
-import AddBooks from './addBooks';
 
 // eslint-disable-next-line react/prop-types
 const Books = (props) => {
@@ -16,8 +15,6 @@ const Books = (props) => {
         books.map((book) => <Book key={book.item_id} bookArray={book} />)
         }
       </ul>
-      <hr />
-      <AddBooks />
     </div>
   );
 };

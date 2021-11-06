@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImUser } from 'react-icons/im';
 
 import { NavLink } from 'react-router-dom';
 
@@ -32,6 +33,7 @@ const Nav = () => {
           ))}
         </ul>
       </div>
+      <ImUser className="user" />
     </nav>
   );
 };
