@@ -41,6 +41,10 @@ body {
   color: #121212;
 }
 
+input[type=text] {
+  color: rgb(0, 0, 0);
+}
+
 .active-link {
   color: #000;
   text-decoration: underline;

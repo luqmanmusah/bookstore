@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBookAPI } from '../API/Api';
 import { addBook } from '../redux/books/books';
-import Categories from './categories';
+// import Categories from './categories';
 
 // const emptyFields = () => {
 //   const fields = document.querySelectorAll('.add-form input');
@@ -57,8 +57,8 @@ function AddBooks() {
       <form className="form-input">
         <input type="text" className="title" name="title" onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
         <br />
-        <select value={Categories} name="categories" className="categories" onChange={(e) => setAuthor(e.target.value)}>
-          <option defaultValue="">Category</option>
+        <select className="categories" onChange={(e) => setAuthor(e.target.value)}>
+          <option value="category">Category</option>
           <option value="Action">Action</option>
           <option value="Fiction">Fiction</option>
           <option value="Horror">Horror</option>
