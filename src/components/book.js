@@ -4,9 +4,13 @@
 /* eslint-disable react/no-typos */
 import React from 'react';
 // import PropTypes from 'prop-types';
+// import { CircularProgressbar } from 'react-circular-progressbar';
+// import 'react-circular-progressbar/dist/styles.css';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 import { removeBookAPI } from '../API/Api';
+import Percentage from './percentage';
+import Progress from './progress';
 
 const Book = (prop) => {
   const dispatch = useDispatch();
@@ -23,13 +27,22 @@ const Book = (prop) => {
 
   return (
 
-    <li key={item_id}>
-      {title}
-      {' | '}
-      {category}
-      <button type="button">Comments</button>
-      <button type="button" onClick={() => removeBookFromStore(item_id)}>Remove</button>
-      <button type="button">Edit</button>
+    <li key={item_id} className="Book">
+      <p className="book_title">{title}</p>
+      <p className="book_category">{category}</p>
+      <div id={item_id} className="book-options">
+        <a href="/#">Comments</a>
+        {' | '}
+        <a href="/#" onClick={() => removeBookFromStore(item_id)}>Remove</a>
+        {' | '}
+        <a href="/#">Edit</a>
+      </div>
+      <div>
+        <Percentage />
+      </div>
+      <div>
+        <Progress />
+      </div>
     </li>
   );
 };

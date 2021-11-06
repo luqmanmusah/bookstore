@@ -52,9 +52,9 @@ function AddBooks() {
   //   }
   // };
   return (
-    <div>
+    <div className="form">
       <h3>Add new book</h3>
-      <form>
+      <form className="form-input">
         <label>Title:</label>
         <br />
         <input type="text" className="title" name="title" onChange={(e) => setTitle(e.target.value)} placeholder="Title" />
@@ -66,7 +66,7 @@ function AddBooks() {
           <option value="Horror">Horror</option>
         </select>
         <br />
-        <input type="button" value="Submit" onClick={submitBookToStore} />
+        <input type="button" className="submit" value="Submit" onClick={submitBookToStore} />
       </form>
     </div>
   );
