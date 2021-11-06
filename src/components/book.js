@@ -31,13 +31,14 @@ const Book = (prop) => {
       <div>
         <p className="book_title">{title}</p>
         <p className="book_category">{category}</p>
-      </div>
-      <div id={item_id} className="book-options">
-        <a href="/#">Comments</a>
-        {' | '}
-        <a href="/#" onClick={() => removeBookFromStore(item_id)}>Remove</a>
-        {' | '}
-        <a href="/#">Edit</a>
+
+        <div id={item_id} className="book-options">
+          <a href="/#">Comments</a>
+          {' | '}
+          <a href="/#" onClick={() => removeBookFromStore(item_id)}>Remove</a>
+          {' | '}
+          <a href="/#">Edit</a>
+        </div>
       </div>
       <div>
         <Percentage />
