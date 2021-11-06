@@ -1,17 +1,25 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
 import Book from './book';
+import AddBooks from './addBooks';
 
-export default function Books() {
-  const books = useSelector((state) => state.books, shallowEqual);
+// eslint-disable-next-line react/prop-types
+const Books = (props) => {
+  // eslint-disable-next-line react/destructuring-assignment
+  // eslint-disable-next-line react/prop-types
+  const books = props.data;
   return (
     <div>
       <h1>My Books</h1>
       <ul>
         {
-        books.map((book) => <Book key={book.id} book={book} />)
+        // eslint-disable-next-line react/prop-types
+        books.map((book) => <Book key={book.item_id} bookArray={book} />)
         }
       </ul>
+      <AddBooks />
     </div>
   );
-}
+};
+
+export default Books;
