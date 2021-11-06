@@ -54,7 +54,7 @@ body {
 * {
   list-style: none;
   text-decoration: none;
-  padding: 0;
+  padding: 0 5px 0 5px;
 }
 
 .navbar,
