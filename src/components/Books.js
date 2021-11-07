@@ -8,7 +8,7 @@ const Books = (props) => {
   // eslint-disable-next-line react/prop-types
   const books = props.data;
   return (
-    <div>
+    <div className="all_books">
       <ul>
         {
         // eslint-disable-next-line react/prop-types

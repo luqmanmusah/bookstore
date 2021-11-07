@@ -53,7 +53,7 @@ body {
 * {
   list-style: none;
   text-decoration: none;
-  padding: 0 5px 0 5px;
+  /* padding: 0 5px 0 5px; */
 }
 
 .navbar,
@@ -91,6 +91,10 @@ body {
 .books,
 .form {
   padding: 1rem 6.188rem 1rem 6.25rem;
+}
+
+.all_books ul {
+  padding-left: 100px;
 }
 
 .book_category {
