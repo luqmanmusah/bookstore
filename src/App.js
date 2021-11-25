@@ -9,6 +9,7 @@ import Books from './components/Books';
 import Categories from './components/categories';
 import { fetchBookAPI } from './API/Api';
 import { getBook } from './redux/books/books';
+import AddBooks from './components/addBooks';
 
 function App() {
   const bookList = useSelector((state) => state.books);
@@ -24,6 +25,8 @@ function App() {
         <Nav />
         <Route exact path="/">
           <Books data={bookList} />
+          <hr />
+          <AddBooks />
         </Route>
         <Route path="/categories" component={Categories} />
       </Router>

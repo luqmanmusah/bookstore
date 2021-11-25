@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImUser } from 'react-icons/im';
 
 import { NavLink } from 'react-router-dom';
 
@@ -16,17 +17,23 @@ const Nav = () => {
     },
   ];
   return (
-    <nav>
-      <ul>
-        {links.map((link) => (
-          <li key={link.id}>
-            <NavLink to={link.path} exact>
-              {link.text}
-              {' '}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+    <nav className="navbar">
+      <div className="nav1">
+        <header>
+          <h1 className="Title">Bookstore CMS</h1>
+        </header>
+        <ul className="Links">
+          {links.map((link) => (
+            <li key={link.id} className={link.name}>
+              <NavLink to={link.path} exact>
+                {link.text}
+                {' '}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <ImUser className="user" />
     </nav>
   );
 };
